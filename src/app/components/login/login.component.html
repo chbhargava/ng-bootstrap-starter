@@ -1,0 +1,47 @@
+<app-header></app-header>
+<app-loading *ngIf="loading"></app-loading>
+<main role="main" class="content-wrapper" *ngIf="!loading">
+
+  <section class="fdb-block" 
+    data-block-type="forms" data-id="4" draggable="true">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-7 col-xl-5 text-center">
+          <div class="fdb-box fdb-touch">
+            <form>
+            <div class="row">
+              <div class="col">
+                <h1>Log In</h1>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Email">
+                <div class="invalid-feedback">
+                  Please provide a valid city.
+                </div>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col">
+                <input type="password" class="form-control mb-1" placeholder="Password">
+                <p class="text-right">
+                  <a href="https://www.froala.com">Recover Password</a>
+                </p>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col">
+                  <button class="btn btn-white btn-shadow" type="reset">Reset</button>
+                  <button class="btn btn-shadow ml-2" type="submit">Submit</button>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<app-footer></app-footer>

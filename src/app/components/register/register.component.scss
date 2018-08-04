@@ -1,0 +1,336 @@
+@import '../../../assets/styles/variables';
+.box-center {
+  margin: 0px auto;
+}
+
+.fdb-block {
+  padding: 50px 0 !important;
+  h1.title {
+    color: $base-2;
+    text-shadow: 0 2px 3px rgba(black, .85);
+  }
+}
+
+.content-wrapper {
+  background-color: #a792f1;
+}
+
+.forgot-password {
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+
+/*************************/
+
+$out: 30%;
+$in: 35%;
+$default-transtion: .5s;
+.fdb-block .fdb-box {
+  padding: 0;
+}
+
+.panel {
+  // width: 600px;
+  margin: auto auto 50px auto;
+  min-height: 400px;
+  &__menu {
+    width: 100%;
+    float: left;
+    margin: 20px 0 0;
+    position: relative;
+    list-style: none;
+    &.second-box {
+      hr {
+        transform: translateX(325%);
+      }
+    }
+    li {
+      width: 50%;
+      text-align: center;
+      float: left;
+      cursor: pointer;
+      color: lightblue !important;
+      -webkit-transition: color 500ms, font-size 500ms;
+      -moz-transition: color 500ms, font-size 500ms;
+      -o-transition: color 500ms, font-size 500ms;
+      transition: color 500ms, font-size 500ms;
+      &.active {
+        color: #a792f1 !important;
+        font-size: 36px;
+        -webkit-transition: color 500ms, font-size 500ms;
+        -moz-transition: color 500ms, font-size 500ms;
+        -o-transition: color 500ms, font-size 500ms;
+        transition: color 500ms, font-size 500ms;
+      }
+      a {
+        display: inline-block;
+        padding: 17px 10px;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+    }
+  }
+  &__wrap {
+    width: 100%;
+    float: left;
+    position: relative;
+    .panel__box {
+      label {
+        opacity: 0;
+      }
+      &:first-child {
+        left: 0;
+        transform: translateX($out) scale(.8);
+        animation: box-1--out $default-transtion;
+        transform-origin: center right;
+        &.active {
+          transform: translateX($in);
+          animation: box-1 $default-transtion;
+        }
+      }
+      &:last-child {
+        right: 0;
+        transform: translateX(-$out) scale(.8);
+        animation: box-2--out $default-transtion;
+        transform-origin: center left;
+        &.active {
+          animation: box-2 $default-transtion;
+          transform: translateX(-$in);
+        }
+      }
+    }
+  }
+  &__box {
+    width: 72%;
+    float: left;
+    z-index: 1;
+    background: pink;
+    position: absolute;
+    padding: 20px;
+    background: #C8DFED;
+    border-radius: 4px;
+    transition: all $default-transtion;
+    border: 1px solid lightgray;
+    &.active {
+      background: #fff;
+      z-index: 2;
+      label,
+      input,
+      button,
+      a {
+        opacity: 1;
+      }
+    }
+    label {
+      float: left;
+      width: 100%;
+      margin-bottom: 20px;
+      color: darken(#AFBFBF, 5%);
+    }
+    input,
+    button,
+    a {
+      outline: none;
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes box-1 {
+  0% {
+    transform: translateX($out) scale(.8);
+    z-index: 1;
+  }
+  49% {
+    transform: translateX(0) scale(.9);
+    z-index: 1;
+  }
+  50% {
+    transform: translateX(0) scale(.9);
+    z-index: 2;
+    label,
+    input,
+    button,
+    a {
+      opacity: 0;
+    }
+  }
+  100% {
+    transform: translateX($in) scale(1);
+    z-index: 2;
+    label,
+    input,
+    button,
+    a {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes box-1--out {
+  0% {
+    transform: translateX($in) scale(1);
+    z-index: 2;
+    label {
+      opacity: 1;
+    }
+  }
+  49% {
+    transform: translateX(0) scale(.9);
+    z-index: 2;
+  }
+  50% {
+    transform: translateX(0) scale(.9);
+    z-index: 1;
+    label,
+    input,
+    button,
+    a {
+      opacity: 1;
+    }
+  }
+  100% {
+    transform: translateX($out) scale(.8);
+    z-index: 1;
+    label,
+    input,
+    button,
+    a {
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes box-2 {
+  0% {
+    transform: translateX(-$out) scale(.8);
+    z-index: 1;
+  }
+  49% {
+    transform: translateX(0) scale(.9);
+    z-index: 1;
+  }
+  50% {
+    transform: translateX(0) scale(.9);
+    z-index: 2;
+    label,
+    input,
+    button,
+    a {
+      opacity: 0;
+    }
+  }
+  100% {
+    transform: translateX(-$in) scale(1);
+    z-index: 2;
+    label,
+    input,
+    button,
+    a {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes box-2--out {
+  0% {
+    transform: translateX(-$in) scale(1);
+    z-index: 2;
+  }
+  49% {
+    transform: translateX(0) scale(.9);
+    z-index: 2;
+  }
+  50% {
+    transform: translateX(0) scale(.9);
+    z-index: 1;
+    label,
+    input,
+    button,
+    a {
+      opacity: 1;
+    }
+  }
+  100% {
+    transform: translateX(-$out) scale(.8);
+    z-index: 1;
+    label,
+    input,
+    button,
+    a {
+      opacity: 0;
+    }
+  }
+}
+/*
+@media screen and (max-width: 512px) {
+  .panel__box.active {
+    width: 78%;
+  }
+  #signUpBox.active {
+    margin-right: -40px;
+  }
+  #signInBox.inactive {
+    margin-left: 40px;
+  }
+  #signInBox.active {
+    margin-left: -40px;
+  }
+  #signUpBox.inactive {
+    margin-right: 40px;
+  }
+  .panel__menu li.active {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .panel__box.active {
+    width: 82%;
+  }
+  #signUpBox.active {
+    margin-right: -50px;
+  }
+  #signInBox.inactive {
+    margin-left: 40px;
+  }
+  #signInBox.active {
+    margin-left: -50px;
+  }
+  #signUpBox.inactive {
+    margin-right: 40px;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .fdb-block {
+    padding: 10px 0 !important;
+    .fdb-box {
+      padding: 20px 20px !important;
+    }
+  }
+
+  .panel__menu li {
+    font-size: 16px;
+    &.active {
+      font-size: 20px;
+    }
+  }
+
+  .panel__box.active {
+    width: 94%;
+  }
+  #signUpBox.active {
+    margin-right: -50px;
+  }
+  #signInBox.inactive {
+    margin-left: 50px;
+  }
+  #signInBox.active {
+    margin-left: -50px;
+  }
+  #signUpBox.inactive {
+    margin-right: 50px;
+  }
+}*/

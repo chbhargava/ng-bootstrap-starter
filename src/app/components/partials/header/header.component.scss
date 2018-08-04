@@ -1,0 +1,76 @@
+@import '../../../../assets/styles/variables';
+header {
+  height: 45px;
+  padding: 0px 20px;
+  border-bottom: 1px solid $color-header-border;
+  box-shadow: 0 4px 3px -3px $color-header-border;
+  -webkit-box-shadow: 0 4px 3px -3px $color-header-border;
+  -moz-box-shadow: 0 4px 3px -3px $color-header-border;
+  .navbar {
+    padding: 0 1rem 4px 1rem !important;
+    .nav-item {
+      padding-top: 2px;
+      &.active {
+        border-top: 2px solid #528bff;
+        padding-top: 0px;
+        .nav-link {
+          color: #007bff !important;
+        }
+      }
+    }
+  }
+  .navbar-brand {
+    padding: 0 !important;
+  }
+  img {
+    vertical-align: middle !important;
+  }
+  h2.title {
+    display: inline-block;
+    color: $color-header-text-red !important;
+    text-align: left;
+    font-size: 20px;
+    line-height: 45px;
+  }
+  .login-btn {
+    right: 20px;
+    position: absolute;
+  }
+}
+
+@media screen and  (max-width:767px) {
+  header {
+    background-position: center 10px;
+  }
+
+  .navbar {
+    .nav-item {
+      &.active {
+        padding-top: 2px;
+        font-weight: bold;
+        border-bottom: 2px solid #528bff;
+        border-top: transparent !important;
+      }
+    }
+    .btn {
+      margin: auto 0 10px 0 !important
+    }
+    .login-btn {
+      position: relative;
+      margin-top: 5px !important;
+    }
+
+    z-index: 1000;
+    position: relative;
+    background-color: white;
+    box-shadow: 0px 4px 3px -3px $color-header-border;
+    -webkit-box-shadow: 0px 4px 3px -3px $color-header-border;
+    -moz-box-shadow: 0px 4px 3px -3px $color-header-border;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header .login-btn {
+      right: 0 !important;
+  }   
+}

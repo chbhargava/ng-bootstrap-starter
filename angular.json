@@ -26,10 +26,18 @@
               "src/favicon.ico",
               "src/assets"
             ],
+            "showCircularDependencies": false,
             "styles": [
+              "src/assets/styles/froala_blocks.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/roboto-fontface/css/roboto/sass/roboto-fontface.scss",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
