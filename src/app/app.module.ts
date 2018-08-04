@@ -15,7 +15,6 @@ import { SessionTimeoutComponent } from './components/session-timeout.component'
 import { HeaderComponent } from './components/partials/header/header.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { LoadingComponent } from './components/partials/loading/loading.component';
-import { LoginComponent } from './components/login/login.component';
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
 
 import { Utils } from './services/utils';
@@ -36,7 +35,6 @@ import { RegisterComponent } from './components/register/register.component';
     HeaderComponent,
     FooterComponent,
     LoadingComponent,
-    LoginComponent,
     MyProfileComponent,
     HomeComponent,
     FeaturesComponent,

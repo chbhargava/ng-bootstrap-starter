@@ -9,16 +9,15 @@ export const USER_ROLE = {
 
 // URL constants: 
 export const URL = {
-    REGISTER    : '/register',
-    LOGIN       : '/login',
-    GET_USER    : '/get_user',
-    UPDATE_USER : '/update_user'
+    LOGIN       : '/server/login',
+    REGISTER    : '/server/create_user',
+    GET_USER    : '/server/get_user',
+    UPDATE_USER : '/server/update_user'
 };
 
 // Routes:
 export const ROUTE = {
     SESSION_TIMEOUT: 'session-timeout',
-    LOGIN: 'login',
     HOME: 'home',
     FEATURES: 'features',
     CONTACT: 'contact',
