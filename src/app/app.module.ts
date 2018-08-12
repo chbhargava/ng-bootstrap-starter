@@ -27,6 +27,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ShowErrorsComponent } from './components/partials/show-errors.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { RegisterComponent } from './components/register/register.component';
     HomeComponent,
     FeaturesComponent,
     ContactComponent,
-    RegisterComponent
+    RegisterComponent,
+    ShowErrorsComponent
   ],
   imports: [
     BrowserModule,

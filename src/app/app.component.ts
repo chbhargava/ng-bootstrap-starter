@@ -4,10 +4,10 @@ import { fadeAnimation } from './animations';
 @Component({
   selector: 'app-root',
   template: `
-  <main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
-    <router-outlet #o="outlet"></router-outlet>
-  </main>
-  <ngx-loading-bar [includeBar]='true' [includeSpinner]='false'></ngx-loading-bar>`,
+  <ngx-loading-bar [includeBar]='true' [includeSpinner]='false'></ngx-loading-bar>
+  <div [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+    <router-outlet #o="outlet"></router-outlet>    
+  </div>`,
   animations: [fadeAnimation]
 })
 

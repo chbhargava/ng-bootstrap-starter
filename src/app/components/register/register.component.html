@@ -4,7 +4,6 @@
 
 <section class="fdb-block" style="background-image: url(./assets/images/bg_4.svg)" data-block-type="forms" data-id="6" draggable="true">
   <div class="container">
-    <form>
     <div class="row justify-content-end">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5 text-left box-center">
         <div class="fdb-box fdb-touch">
@@ -15,25 +14,38 @@
             </ul>
             <div class="panel__wrap">
               <div class="panel__box inactive" id="signInBox">
-                <div class="row">
-                  <div class="col mt-4">
-                    <input type="text" class="form-control" placeholder="Email">
+                <form name="signInForm" (ngSubmit)="f.form.valid && signInSubmit()" #f="ngForm" novalidate>
+                  <div class="row">
+                    <div class="col mt-4">
+                      <input type="text" class="form-control" placeholder="Email" 
+                      name="email" id="email" [(ngModel)]="user.email" #email="ngModel"
+                      pattern="^[\w-]+(?:\.[\w-]+)*@(?:[a-zA-Z0-9]+\.)+[a-zA-Z]{2,7}$" maxlength=100 required>
+                      <show-errors [f]="f" [control]="email"></show-errors>
+                    </div>
                   </div>
-                </div>
-                <div class="row mt-4">
-                  <div class="col">
-                    <input type="password" class="form-control" placeholder="Password">
+                  <div class="row mt-4">
+                    <div class="col">
+                      <input type="password" class="form-control" placeholder="Password"
+                      name="password" id="password" [(ngModel)]="user.password" #password="ngModel"
+                      maxlength=100 required>
+                      <show-errors [f]="f" [control]="password"></show-errors>
+                    </div>
                   </div>
-                </div>
-                <a routerLink="/forgot-password" class="pull-right mt-4 forgot-password">Forgot Password?</a>
-                <div class="row mt-4 pull-right">
-                  <div class="col">
-                    <button class="btn btn-shadow btn-white mr-2 mb-2" type="reset">Reset</button>
-                    <button class="btn btn-shadow mb-2" type="submit">Submit</button>
+                  <a routerLink="/forgot-password" class="pull-right mt-4 forgot-password">Forgot Password?</a>
+                  <div class="row mt-4 pull-right">
+                    <div class="col">
+                      <button class="btn btn-shadow btn-white mr-2 mb-2" type="reset">Reset</button>
+                      <button class="btn btn-shadow mb-2" type="submit">Submit</button>
+                    </div>
                   </div>
-                </div>
+                </form>
               </div>
               <div class="panel__box active" id="signUpBox">
+                <div class="row">
+                  <div class="col mt-4">
+                    <input type="text" class="form-control" placeholder="Name">
+                  </div>
+                </div>
                 <div class="row">
                   <div class="col mt-4">
                     <input type="text" class="form-control" placeholder="Email">
@@ -61,8 +73,7 @@
         </div>
       </div>
     </div>
-  </form>
-</div> 
+  </div> 
 </section>
 
 </main>

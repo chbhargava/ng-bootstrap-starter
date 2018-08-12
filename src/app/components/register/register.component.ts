@@ -13,6 +13,12 @@ export class RegisterComponent implements OnInit, AfterViewInit {
   signUp: HTMLElement;
   signIn: HTMLElement;
 
+  user: any = {
+    name: '',
+    email: '',
+    password: ''
+  }
+
   constructor() { }
 
   ngOnInit() {
@@ -52,5 +58,9 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     this.panelBoxes[0].classList.add('inactive');
     this.menu.classList.add('second-box');
     this.signUp.classList.add("active");
+  }
+
+  signInSubmit() {
+    
   }
 }

@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "id": "1234",
+      "Name": "Bhargava",
+      "email": "chbhargava@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "2222",
+      "Name": "Teju",
+      "email": "teju@gmail.com",
+      "password": "123456"
+    }
+  ],
+  "count": 0
+}

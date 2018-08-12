@@ -53,6 +53,9 @@ router-outlet ~ * {
     -webkit-box-shadow: 0px 3px 2px -3px;
     -moz-box-shadow: 0px 3px 2px -3px;
     }
+    &.ng-invalid.ng-touched {
+      border-color: red;
+    }
   }
 
   select.form-control {
@@ -67,6 +70,10 @@ router-outlet ~ * {
     label {
       margin-right: 10px;
     }
+  }
+
+  show-errors ul {
+    margin-bottom: 0px !important;
   }
 }
 
