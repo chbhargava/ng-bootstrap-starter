@@ -7,6 +7,14 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+  LinkedinLoginProvider,
+  AuthService,
+} from "angular-6-social-login";
 
 import { AppComponent } from './app.component';
 import { AppRouting } from './app.routing';
@@ -18,7 +26,7 @@ import { LoadingComponent } from './components/partials/loading/loading.componen
 import { MyProfileComponent } from './components/my-profile/my-profile.component';
 
 import { Utils } from './services/utils';
-import { AuthService } from './services/auth.service';
+import { UserAuthService } from './services/user-auth.service';
 
 import { FakeBackendProvider } from './helpers/fake-bakend';
 import { environment } from '../environments/environment';
@@ -28,6 +36,26 @@ import { FeaturesComponent } from './components/features/features.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ShowErrorsComponent } from './components/partials/show-errors.component';
+
+export function getAuthServiceConfigs() {
+  let config = new AuthServiceConfig(
+      [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider("1004357134903-s4mrfph41nhptm713rtun4h0v1t1svug.apps.googleusercontent.com")
+        },
+        {
+          id: FacebookLoginProvider.PROVIDER_ID,
+          provider: new FacebookLoginProvider("471510306668438")
+        },
+        {
+          id: LinkedinLoginProvider.PROVIDER_ID,
+          provider: new LinkedinLoginProvider("81n843y6hvssco")
+        },
+      ]
+  );
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -60,6 +88,11 @@ import { ShowErrorsComponent } from './components/partials/show-errors.component
     Utils,
     AuthGuard,
     AuthService,
+    UserAuthService,
+    {
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
+    },
     FakeBackendProvider
   ],
   bootstrap: [AppComponent]

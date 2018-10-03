@@ -25,6 +25,7 @@
     "@angular/router": "^6.0.3",
     "@ngx-loading-bar/router": "^2.1.2",
     "@types/jwt-decode": "^2.2.1",
+    "angular-6-social-login": "^1.1.1",
     "angular-font-awesome": "^3.1.2",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.1.2",

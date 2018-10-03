@@ -8,7 +8,7 @@ import { Utils } from './utils';
 import { environment } from "../../environments/environment";
 
 @Injectable()
-export class AuthService {
+export class UserAuthService {
 
   constructor(private utils: Utils, private logger: NGXLogger) { }
 
