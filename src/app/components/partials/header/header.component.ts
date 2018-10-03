@@ -13,8 +13,8 @@ export class HeaderComponent implements OnInit {
 
   appTitle = APP_TITLE;
 
-  private user: SocialUser;
-  private loggedIn: boolean;
+  user: SocialUser;
+  loggedIn: boolean;
 
   constructor(private authService: AuthService) { }
 
