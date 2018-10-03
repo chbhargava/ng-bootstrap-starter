@@ -4,8 +4,8 @@ import {
   AuthService,
   FacebookLoginProvider,
   GoogleLoginProvider,
-  LinkedinLoginProvider
-} from 'angular-6-social-login';
+  LinkedInLoginProvider
+} from 'angularx-social-login';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -56,7 +56,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     }else if(socialPlatform == "google"){
       socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
     } else if (socialPlatform == "linkedin") {
-      socialPlatformProvider = LinkedinLoginProvider.PROVIDER_ID;
+      socialPlatformProvider = LinkedInLoginProvider.PROVIDER_ID;
     }
     
     this.socialAuthService.signIn(socialPlatformProvider).then(

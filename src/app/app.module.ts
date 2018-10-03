@@ -12,9 +12,9 @@ import {
   AuthServiceConfig,
   GoogleLoginProvider,
   FacebookLoginProvider,
-  LinkedinLoginProvider,
+  LinkedInLoginProvider,
   AuthService,
-} from "angular-6-social-login";
+} from "angularx-social-login";
 
 import { AppComponent } from './app.component';
 import { AppRouting } from './app.routing';
@@ -49,8 +49,8 @@ export function getAuthServiceConfigs() {
           provider: new FacebookLoginProvider("471510306668438")
         },
         {
-          id: LinkedinLoginProvider.PROVIDER_ID,
-          provider: new LinkedinLoginProvider("81n843y6hvssco")
+          id: LinkedInLoginProvider.PROVIDER_ID,
+          provider: new LinkedInLoginProvider("81n843y6hvssco", false, 'en_US')
         },
       ]
   );
