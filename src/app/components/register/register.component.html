@@ -23,15 +23,19 @@
                     <button (click)="socialSignIn('facebook')" class="btn btn-round btn-shadow"><fa class="with-icon" name="facebook-f"></fa> Facebook</button>
                   </p>
 
-                  <p class="text-center pt-4">
+                  <!-- <p class="text-center pt-4">
                     <button (click)="socialSignIn('linkedin')" class="btn btn-round btn-success btn-shadow"><fa class="with-icon" name="linkedin"></fa> Linkedin</button>
-                  </p>
+                  </p> -->
                   <br/>
                   Or
 
                   <p class="text-center pt-4">
                     <button (click)="emailLogin = true" class="btn btn-round btn-white btn-shadow"><fa class="with-icon" name="at"></fa> Email</button>
                   </p>
+
+                  <p class="text-center pt-4">
+                      <button (click)="signOut()" class="btn btn-round btn-white btn-shadow"><fa class="with-icon" name="exit"></fa> Sign Out</button>
+                    </p>
                 </div>
               </div>
             </div>

@@ -31,11 +31,13 @@
         </ul>
       </div>
 
-      <div class="collapse navbar-collapse navbar-collapse-2">
+      <div class="collapse navbar-collapse navbar-collapse-2" *ngIf="!user">
         <a class="btn btn-shadow login-btn" routerLink="/register">Join Us</a>
       </div>
 
-
+      <div *ngIf="user">
+        <img src="{{ user.photoUrl }}" height="30px"> {{ user.name }}
+      </div>
     </nav>
   </div>
 </header>

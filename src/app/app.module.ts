@@ -7,14 +7,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {
-  SocialLoginModule,
-  AuthServiceConfig,
-  GoogleLoginProvider,
-  FacebookLoginProvider,
-  LinkedInLoginProvider,
-  AuthService,
-} from "angularx-social-login";
+import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
+import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider} from "angularx-social-login";
 
 import { AppComponent } from './app.component';
 import { AppRouting } from './app.routing';
@@ -48,10 +42,10 @@ export function getAuthServiceConfigs() {
           id: FacebookLoginProvider.PROVIDER_ID,
           provider: new FacebookLoginProvider("471510306668438")
         },
-        {
-          id: LinkedInLoginProvider.PROVIDER_ID,
-          provider: new LinkedInLoginProvider("81n843y6hvssco", false, 'en_US')
-        },
+        // {
+        //   id: LinkedInLoginProvider.PROVIDER_ID,
+        //   provider: new LinkedInLoginProvider("81n843y6hvssco", true, 'en_US')
+        // },
       ]
   );
   return config;
@@ -78,6 +72,7 @@ export function getAuthServiceConfigs() {
     FormsModule,
     AppRouting,
     AngularFontAwesomeModule,
+    SocialLoginModule,
     LoggerModule.forRoot({ 
       level: environment.production ? NgxLoggerLevel.LOG : NgxLoggerLevel.DEBUG,
       serverLogLevel: NgxLoggerLevel.OFF 
@@ -87,7 +82,6 @@ export function getAuthServiceConfigs() {
   providers: [
     Utils,
     AuthGuard,
-    AuthService,
     UserAuthService,
     {
       provide: AuthServiceConfig,

@@ -1,11 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 
-import {
-  AuthService,
-  FacebookLoginProvider,
-  GoogleLoginProvider,
-  LinkedInLoginProvider
-} from 'angularx-social-login';
+import { AuthService } from "angularx-social-login";
+import { FacebookLoginProvider, GoogleLoginProvider, LinkedInLoginProvider } from "angularx-social-login";
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -67,6 +64,10 @@ export class RegisterComponent implements OnInit, AfterViewInit {
             
       }
     );
+  }
+
+  signOut(): void {
+    this.socialAuthService.signOut();
   }
 
   onClickSignIn(e) {
